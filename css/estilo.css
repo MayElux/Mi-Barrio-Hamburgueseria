@@ -1,0 +1,263 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    background: linear-gradient(#10168C, #6B90F3, #10168C, #6B90F3, #10168C);
+}
+
+.contenedor > *{
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.header{
+    background: url(../img-inicio/logo-texto.png) center no-repeat;
+    background-size: contain;
+    grid-area: header;
+}
+
+.header .ico-face,
+.header .ico-insta{
+    float: right;
+    padding: 5px;
+    grid-area: header;
+}
+
+.ico-face:hover, .ico-insta:hover{
+    box-shadow: 2px 2px 2px white;
+}
+
+.navbar{
+    grid-area: navbar;
+    background: #091450;
+	color: #fff;
+    box-shadow: -1px 1px 7px 0px  rgba(0,0,0,0.75);
+}
+
+.navbar ul{
+    list-style-type: none;
+    font-family: arial;
+    font-weight: 900;
+    display: flex;
+    justify-content: flex-start
+}
+
+.navbar ul li{
+    display: block;
+    padding: 5px 5px;
+    width: 100%;
+    float: left;
+    padding-top: 4px;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform:uppercase;
+}
+
+.navbar ul li:hover{
+    background: #AFB2FF;
+    color: #373964;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px 2px;
+}
+
+.navbar ul li a:hover{
+    color: #091450;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    font-family: arial;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    box-shadow: -1px 1px 7px 0px  rgba(0,0,0,0.75);
+}
+
+.sidebar .productos{
+    list-style: none;
+}
+
+.productos .promo, .exclusiva, .hamburguesa, .pancho, .ensalada, .postre{
+    padding: 32px;
+    font-weight: 800;
+}
+
+.promo a, .exclusiva a, .hamburguesa a, .pancho a, .ensalada a, .postre a{
+    color: #fff;
+    text-decoration: none;
+    -webkit-text-stroke: 2px #030538;
+}
+
+.productos .promo a:hover, .exclusiva a:hover, .hamburguesa a:hover, .pancho a:hover, .ensalada a:hover, .postre a:hover{
+    color: #030538;
+    -webkit-text-stroke: 2px #fff;
+}
+
+.productos .promo:hover{
+    background: url(../img-aside/promo.png) center;
+    border-radius: 4px;
+}
+
+.productos .exclusiva:hover{
+    background: url(../img-aside/exclusiva.png) center;
+    border-radius: 4px;
+}
+
+.productos .hamburguesa:hover{
+    background: url(../img-aside/hamburguesa.png) center;
+    border-radius: 4px;
+}
+
+.productos .pancho:hover{
+    background: url(../img-aside/pancho.png) center;
+    border-radius: 4px;
+}
+
+.productos .ensalada:hover{
+    background: url(../img-aside/ensalada.png) center;
+    border-radius: 4px;
+}
+
+.productos .postre:hover{
+    background: url(../img-aside/postre.png) center;
+    border-radius: 4px;
+}
+
+.principal{
+    grid-area: principal;
+    box-shadow: -1px 1px 7px 0px  rgba(0,0,0,0.75);
+    box-sizing: border-box;
+    padding: 10px;
+    background: #fff;
+}
+
+.principal p{
+    font-family: arial;
+    color: #000;
+}
+
+.principal h1{
+    font-weight: bolder;
+    font-size: 40px;
+    font-family: monospace;
+    color: #6C99FF;
+    -webkit-text-stroke: 1px #193982;
+}
+
+.principal .fotoinicio{
+    box-sizing: border-box;
+    float: right;
+    border: 2px solid #000;
+    margin: 5px;
+}
+
+.footer{
+    grid-area: footer;
+    background: #091450;
+    box-shadow: -1px 1px 7px 0px  rgba(0,0,0,0.75);
+}
+
+.footer a{
+    text-decoration: none;
+    font-family: arial;
+}
+
+.contacto{
+    padding-top: 8px;
+    color: #6669B9;
+    font-weight: bold;
+    float:left;
+}
+
+.contacto:hover{
+    color:#fff;
+}
+
+.footer h3{
+    padding-top: 8px;
+    font-size: 16px;
+    font-family: arial;
+    color: #6669B9;
+    float: right;
+}
+
+.footer .mdp{
+    padding-top: 3px;
+    float: right;
+}
+
+@media(min-width:300px){
+    .contenedor{
+    /*convierto en un grid todo*/
+    display:grid;
+    /*le doy una separacion a todos los integrantes del grid*/
+    grid-gap: 10px;
+    grid-template: 
+        
+        "header" auto
+        "navbar" 50px
+        "principal" auto
+        "sidebar" auto
+        "footer" 50px
+ }
+    
+    
+}
+
+
+@media(min-width: 600px){
+    .contenedor{
+       /* grid-template-columns:200px auto; 
+        grid-template-rows: 100px 50px auto 50px;
+        grid-template-areas: 
+        "header header"
+        "navbar navbar"
+        "sidebar principal"
+        "footer footer"*/
+        grid-template: 
+            "header header" 100px
+            "navbar navbar" 50px
+            "sidebar principal" auto
+            "footer footer" 100px /
+            200px auto;
+    }
+    
+    
+    .sidebar{
+    grid-area: sidebar;
+    font-family: arial;
+    font-size: 18px;
+    box-shadow: -1px 1px 7px 0px  rgba(0,0,0,0.75);
+}
+    
+}
+
+@media(min-width: 850px){
+    .contenedor{
+              grid-template: 
+            "header header header" 100px
+            "navbar navbar navbar" 50px
+            "principal principal sidebar" auto
+            "footer footer footer" 50px /
+            200px auto 200px;
+    }
+    
+}
+    
+}
